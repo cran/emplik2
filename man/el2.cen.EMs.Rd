@@ -66,7 +66,7 @@ where \eqn{\mu_i} and \eqn{\nu_j} are the probability jumps at \eqn{x_i} and \eq
 that maximize the empirical likelihood ratio. The value of \code{constraint} should be close to 0.} 
 }
 \references{
-Barton, W. (2009). PhD dissertation at University of Kentucky, estimated completion Dec. 2009.
+Barton, W. (2010).  "Comparison of Two Samples by a Nonparametric Likelihood-Ratio Test."  Ph.D. dissertation, University of Kentucky.
 
 Chang, M. and Yang, G. (1987). ``Strong Consistency of a Nonparametric Estimator of the Survival Function
  with Doubly Censored Data.''  \code{Ann. Stat.},15, pp. 1536-1547.
@@ -79,7 +79,7 @@ Gomez, G., Julia, O., and Utzet, F. (1992). ``Survival Analysis for Left-Censore
 Li, G. (1995). ``Nonparametric Likelihood Ratio Estimation of Probabilities for Truncated Data.''
    \code{J. Amer. Statist. Assoc.}, 90, pp. 997-1003.
 
-Owen, A.B. (2001). \code{Empirical Likelihood}. Chapman and Hall/CRC, Boca Raton, pp.223-227.
+Owen, A.B. (2001). \code{Empirical Likelihood}. Chapman and Hall/CRC, Boca Raton, pp. 223-227.
 
 Turnbull, B. (1976). ``The Empirical Distribution Function with Arbitrarily Grouped, Censored and Truncated Data.''
    \code{J. Roy. Statist. Soc.}, Series B, 38, pp. 290-295.

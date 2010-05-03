@@ -1,0 +1,15 @@
+7a9433eb0e662ff5d60b5649d9e1a007 *DESCRIPTION
+9fdfeb11f7ddba6f3aab9aaa6b1ac5dd *NAMESPACE
+812c9d380d2a23b7eb7173b78bf82182 *R/el2.cen.EMm.R
+09825d3957786ebc77009edd1ee779c3 *R/el2.cen.EMs.R
+24b14e022c6b196499bad8366f4ad5f0 *R/el2.test.wtm.R
+8e1ad3490386cdcdccb7fb25b4ce61fd *R/el2.test.wts.R
+567185c33fa14391b2e261a96db4f376 *R/myWCY.R
+d7cfa30b25a559c9a18c49295039843b *R/myWKM.R
+ec818b4662eac96ad5c4a867913726c5 *R/myWdataclean2.R
+fce5b117fd1ef4cc585db942930745cd *R/myWdataclean3.R
+7a413ea1e90225fae92c013efa808c40 *man/el2.cen.EMm.Rd
+e0ce6fad8d3b882d4828d320d24219fc *man/el2.cen.EMs.Rd
+133f4fa9ebf542f12f698b98522556a9 *man/el2.test.wtm.Rd
+7009e18d13d8cc88cd99d0ed9866d7a7 *man/el2.test.wts.Rd
+e7e468d45137188f0771d66a78882701 *man/emplik2-internal.Rd
