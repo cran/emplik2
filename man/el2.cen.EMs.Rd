@@ -22,7 +22,7 @@ el2.cen.EMs(x,dx,y,dy,fun=function(x,y){x>=y}, mean=0.5, maxit=25)
 \item{dx}{a vector of the censoring indicators for \code{x}: 0=right-censored, 1=uncensored, 2=left-censored}
 \item{y}{a vector of the data for the second sample}
 \item{dy}{a vector of the censoring indicators for \code{y}: 0=right-censored, 1=uncensored, 2=left-censored}
-\item{fun}{a user-defined, continuous-weight-function \eqn{g(x,y)} used in the hypothesis \eqn{H_o}.
+\item{fun}{a user-defined, continuous-weight-function \eqn{g(x,y)} used to define the mean in the hypothesis \eqn{H_o}.
   The default is \code{fun=function(x,y){x>=y}}.}
 \item{mean}{the hypothesized value of \eqn{E(g(x,y))}; default is 0.5}
 \item{maxit}{a positive integer used to set the number of iterations of the EM algorithm; default is 25}
@@ -62,11 +62,11 @@ The value of \eqn{mean} should be chosen between the maximum and minimum values 
 \item{sum_nuvec}{sum of the probability jumps for the uncensored \eqn{y}-values, should be 1}
 
 \item{constraint}{the realized value of \eqn{\sum_{i=1}^n \sum_{j=1}^m (g(x_i,y_j) - mean) \mu_i \nu_j}, 
-where \eqn{\mu_i} and \eqn{\nu_j} are the probability jumps at \eqn{x_i} and \eqn{y_j}, respectively, 
+where \eqn{mu_i} and \eqn{nu_j} are the probability jumps at \eqn{x_i} and \eqn{y_j}, respectively, 
 that maximize the empirical likelihood ratio. The value of \code{constraint} should be close to 0.} 
 }
 \references{
-Barton, W. (2010).  "Comparison of Two Samples by a Nonparametric Likelihood-Ratio Test."  Ph.D. dissertation, University of Kentucky.
+Barton, W. (2009). PhD dissertation at University of Kentucky, estimated completion Dec. 2009.
 
 Chang, M. and Yang, G. (1987). ``Strong Consistency of a Nonparametric Estimator of the Survival Function
  with Doubly Censored Data.''  \code{Ann. Stat.},15, pp. 1536-1547.
@@ -79,7 +79,7 @@ Gomez, G., Julia, O., and Utzet, F. (1992). ``Survival Analysis for Left-Censore
 Li, G. (1995). ``Nonparametric Likelihood Ratio Estimation of Probabilities for Truncated Data.''
    \code{J. Amer. Statist. Assoc.}, 90, pp. 997-1003.
 
-Owen, A.B. (2001). \code{Empirical Likelihood}. Chapman and Hall/CRC, Boca Raton, pp. 223-227.
+Owen, A.B. (2001). \code{Empirical Likelihood}. Chapman and Hall/CRC, Boca Raton, pp.223-227.
 
 Turnbull, B. (1976). ``The Empirical Distribution Function with Arbitrarily Grouped, Censored and Truncated Data.''
    \code{J. Roy. Statist. Soc.}, Series B, 38, pp. 290-295.

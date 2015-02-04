@@ -44,14 +44,14 @@ The value of \eqn{mean_k} should be chosen between the maximum and minimum value
 \code{el2.cen.EMm} returns a list of values as follows:
 
  
-\item{xd1}{a vector of the unique, uncensored \eqn{x}-values in ascending order}
+\item{xd1}{a vector of unique, uncensored \eqn{x}-values in ascending order}
 
-\item{yd1}{a vector of the unique, uncensored \eqn{y}-values in ascending order}
+\item{yd1}{a vector of unique, uncensored \eqn{y}-values in ascending order}
 
 \item{temp3}{a list of values returned by the \code{el2.test.wtm} function (which is called by \code{el2.cen.EMm})}
 
 \item{mean}{the hypothesized value of \eqn{E(g(x,y))}}
-\item{NPMLE}{the non-parametric-maximum-likelihood-estimator vector of \eqn{E(g(x,y))}}
+\item{NPMLE}{a non-parametric-maximum-likelihood-estimator vector of \eqn{E(g(x,y))}}
 
 \item{logel00}{the log of the unconstrained empirical likelihood}
 
@@ -62,14 +62,14 @@ The value of \eqn{mean_k} should be chosen between the maximum and minimum value
 \item{Pval}{the p-value for the \code{p} simultaneous hypotheses, equal to \code{1 - pchisq(-2LLR, df = p)}}
 
 \item{logvec}{the vector of successive values of \code{logel} computed by the EM algorithm
- (should converge toward a fixed value, can be used to assess convergence of the EM algorithm)}
+ (should converge toward a fixed value)}
 
 \item{sum_muvec}{sum of the probability jumps for the uncensored \eqn{x}-values, should be 1}
 
 \item{sum_nuvec}{sum of the probability jumps for the uncensored \eqn{y}-values, should be 1}
 }
 \references{
-Barton, W. (2010).  "Comparison of Two Samples by a Nonparametric Likelihood-Ratio Test."  Ph.D. dissertation, University of Kentucky.
+Barton, W. (2009).  PhD dissertation at University of Kentucky, estimated completion Dec. 2009.
 
 Chang, M. and Yang, G. (1987). ``Strong Consistency of a Nonparametric Estimator of the Survival Function with Doubly Censored Data.''  \code{Ann. Stat.},15, pp. 1536-1547.
 
@@ -81,7 +81,7 @@ Gomez, G., Julia, O., and Utzet, F. (1992). ``Survival Analysis for Left-Censore
 Li, G. (1995). ``Nonparametric Likelihood Ratio Estimation of Probabilities for Truncated Data.''
    \code{J. Amer. Statist. Assoc.}, 90, pp. 997-1003.
 
-Owen, A.B. (2001). \code{Empirical Likelihood}. Chapman and Hall/CRC, Boca Raton, pp. 223-227.
+Owen, A.B. (2001). \code{Empirical Likelihood}. Chapman and Hall/CRC, Boca Raton, pp.223-227.
 
 Turnbull, B. (1976). ``The Empirical Distribution Function with Arbitrarily Grouped, Censored and Truncated Data.''
    \code{J. Roy. Statist. Soc.}, Series B, 38, pp. 290-295.
@@ -97,12 +97,12 @@ Zhou, M. (2009) \code{emplik} package on CRAN website.  Dr. Zhou is my PhD advis
 William H. Barton <bbarton@lexmark.com>
 }
 \examples{ 
-x<-c(10,80,209,273,279,324,391,415,566,85,852,881,895,954,
-1101,1133,1337,1393,1408,1444,1513,1585,1669,1823,1941)
-dx<-c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,0,1,1,0)
-y<-c(21,38,39,51,77,185,240,289,524,610,612,677,798,881,899,
-946,1010,1074,1147,1154,1199,1269,1329,1484,1493,1559,1602,1684,1900,1952)
-dy<-c(1,1,1,1,1,1,2,2,1,1,1,1,1,2,1,1,1,1,1,1,0,0,1,1,0,0,1,0,0,0)
+x<-c(10, 80, 209, 273, 279, 324, 391, 415, 566, 85, 852, 881, 895, 954, 1101, 1133,
+1337, 1393, 1408, 1444, 1513, 1585, 1669, 1823, 1941)
+dx<-c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0)
+y<-c(21, 38, 39, 51, 77, 185, 240, 289, 524, 610, 612, 677, 798, 881, 899, 946, 1010,
+1074, 1147, 1154, 1199, 1269, 1329, 1484, 1493, 1559, 1602, 1684, 1900, 1952)
+dy<-c(1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0)
 nx<-length(x)
 ny<-length(y)
 xc<-1:nx

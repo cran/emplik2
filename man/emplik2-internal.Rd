@@ -16,9 +16,9 @@ myWdataclean2(z, d, wt = rep(1, length(z)))
 myWdataclean3(z, d, zc = rep(1, length(z)), wt = rep(1, length(z)))
 }
 \details{
-\code{myWCY} calculates the weighted Chang-Yang self-consistent estimator for doubly-censored data.
+\code{WCY} calculates the weighted Chang-Yang self-consistent estimator for doubly-censored data.
 
-\code{myWKM} calculates the weighted Kaplan-Meier estimator for right-censored data.
+\code{WKM} calculates the weighted Kaplan-Meier estimator for right-censored data.
 
 \code{myWdataclean2} sorts the data, collapses the true ties, and puts the number of tied values as the weights.
 

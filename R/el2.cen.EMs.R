@@ -114,10 +114,10 @@ el2.cen.EMs<-function(x,dx,y,dy,fun=function(x,y) {x>=y}, mean=0.5,
       jumpyu   <- temp2y$jump
    #Adjust yd1, ny1 etc. to reflect repeat data
       yd1<-temp2y$xd1
-      ny1<-length(yd1)
+      ny1<-length(xd1)
       wyd1<-temp2y$wd1
       yd0<-temp2y$xd0
-      ny0<-length(yd0)
+      ny0<-length(xd0)
       wyd0<-temp2y$wd0
       }
    #Right-censored case
