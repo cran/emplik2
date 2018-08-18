@@ -1,3 +1,3 @@
 export(el2.cen.EMm, el2.cen.EMs, el2.test.wtm, el2.test.wts)
 
-
+importFrom(stats, pchisq, qchisq, uniroot)
