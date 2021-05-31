@@ -1,5 +1,5 @@
 el2.test.wtm <- function (xd1,yd1,wxd1new, wyd1new, muvec, nuvec, Hu, Hmu,
-  Hnu, p, mean, maxit=10) {
+  Hnu, p, mean, maxit=15) {
 
 #Initialize vectors and scalars
   lam <- rep(0,p)

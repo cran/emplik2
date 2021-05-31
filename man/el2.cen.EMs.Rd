@@ -66,7 +66,9 @@ where \eqn{mu_i} and \eqn{nu_j} are the probability jumps at \eqn{x_i} and \eqn{
 that maximize the empirical likelihood ratio. The value of \code{constraint} should be close to 0.} 
 }
 \references{
-Barton, W. (2009). PhD dissertation at University of Kentucky, estimated completion Dec. 2009.
+
+Barton, W. (2010). Comparison of two samples by a nonparametric likelihood-ratio test.  
+PhD dissertation at University of Kentucky.
 
 Chang, M. and Yang, G. (1987). ``Strong Consistency of a Nonparametric Estimator of the Survival Function
  with Doubly Censored Data.''  \code{Ann. Stat.},15, pp. 1536-1547.
@@ -87,8 +89,8 @@ Turnbull, B. (1976). ``The Empirical Distribution Function with Arbitrarily Grou
 Zhou, M. (2005). ``Empirical likelihood ratio with arbitrarily censored/truncated data by EM algorithm.''
    \code{J. Comput. Graph. Stat.}, 14, pp. 643-656.
 
-Zhou, M. (2009) \code{emplik} package on CRAN website.  Dr. Zhou is my PhD advisor 
-  at the University of Kentucky.  My  \code{el2.cen.EMs} function extends Dr. Zhou's \code{el.cen.EM}
+Zhou, M. (2009) \code{emplik} package on CRAN website.  
+  The \code{el2.cen.EMs} function extends \code{el.cen.EM}
   function from one-sample to two-samples.
 }
 \author{

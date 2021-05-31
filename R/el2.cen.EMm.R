@@ -1,5 +1,5 @@
-el2.cen.EMm<-function(x, dx, y, dy, p, H, xc=1:length(x),
-  yc=1:length(y), mean, maxit=10) {
+el2.cen.EMm<-function(x, dx, wx=rep(1,length(x)), y, dy, wy=rep(1,length(y)), p, H, 
+                      xc=1:length(x), yc=1:length(y), mean, maxit=15) {
 #x,y pairs can be any combination of uncensored, left-cens, right-cens
 #Store data as vectors 
     xvec <- as.vector(x)

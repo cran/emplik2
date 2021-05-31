@@ -22,6 +22,7 @@ myWdataclean3(z, d, zc = rep(1, length(z)), wt = rep(1, length(z)))
 
 \code{myWdataclean2} sorts the data, collapses the true ties, and puts the number of tied values as the weights.
 
-\code{myWdataclean3} sorts the data, collapses the true ties, and puts the number of tied values as the weights.
+\code{myWdataclean3} sorts the data, collapses the true ties, and puts the number of tied values as the weights. The extra
+                  input zc controls if the tied data should be collapsed. If zc[i] not= zc[j] then x[i] and x[j] will not collapse.
 }
 \keyword{internal}

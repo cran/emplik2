@@ -35,7 +35,7 @@ hypothesized value of \eqn{E(g_k(x,y))}
 \eqn{E} indicates ``expected value''
 }
 \usage{
-el2.test.wtm(xd1,yd1,wxd1new, wyd1new, muvec, nuvec, Hu, Hmu, Hnu, p, mean, maxit=10)  
+el2.test.wtm(xd1,yd1,wxd1new, wyd1new, muvec, nuvec, Hu, Hmu, Hnu, p, mean, maxit=15)  
 }
 \arguments{
 \item{xd1}{a vector of uncensored data for the first sample}
