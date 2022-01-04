@@ -35,15 +35,19 @@ for (b in 1:p) {
     Hk <- Hu[, ((k-1)*ny1+1):(k*ny1)]
     fact1 <- as.vector((Hk%*%nuvec)*(muvec1^2)/wxd1new)
     fact2 <- as.vector((muvec%*%Hk)*(nuvec1^2)/wyd1new)
-    for (i in 1:nx1) {
-      for (j in 1:ny1) {
-        constraintp[k,b] <- constraintp[k,b] -
-        Hb[i,j] * (nuvec1[j]*fact1[i] +
-        muvec1[i]*fact2[j]) } } } }
+    constraintp[k, b] <- constraintp[k, b] - as.numeric(fact1 %*% Hb %*% nuvec1 + muvec1 %*% Hb %*% fact2)
+      #### modified 12/2021 M. Zhou	
+	## for (i in 1:nx1) {
+    ##   for (j in 1:ny1) {
+    ##     constraintp[k,b] <- constraintp[k,b] -
+    ##      Hb[i,j] * (nuvec1[j]*fact1[i] +
+    ##      muvec1[i]*fact2[j]) } } 
+   } }
 constmat[r,] <- constraint
 #Run Newton-Raphson routine
-lam1 <- lam - constraint %*% solve(constraintp)
-lam <- lam1
+  lam1 <- lam + solve(constraintp, -constraint)  ## M.Zhou 12/2021
+## lam1 <- lam - constraint %*% solve(constraintp)
+  lam <- lam1
 }
 list(xd1=xd1,wxd1new=wxd1new,muvec1=muvec1,yd1=yd1,wyd1new=wyd1new,
 nuvec1=nuvec1,constmat=constmat,lam=lam1,mean=mean)

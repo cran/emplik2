@@ -24,7 +24,7 @@ where the variables are defined as follows:
 \eqn{\nu} is a vector of estimated probability jumps for the second sample
 }
 \usage{
-el2.test.wts(u,v,wu,wv,mu0,nu0,indicmat,mean)
+el2.test.wts(u,v,wu,wv,mu0,nu0,indicmat,mean,lamOld=0)
 }
 \arguments{
 \item{u}{a vector of uncensored data for the first sample}
@@ -35,6 +35,7 @@ el2.test.wts(u,v,wu,wv,mu0,nu0,indicmat,mean)
 \item{nu0}{a vector of estimated probability jumps for \code{v}}
 \item{indicmat}{a matrix \eqn{[g(u_i,v_j)-mean]} where \eqn{g(u, v)} is a user-chosen function}
 \item{mean}{a hypothesized value of \eqn{E(g(u,v))}, where \eqn{E} indicates ``expected value.''}
+\item{lamOld}{The previous solution of lambda, used as the starting point to search for new solution of lambda.}
 }
 \details{
 This function is called by \code{el2.cen.EMs}.  It is listed here because the user may find it useful elsewhere.
@@ -61,7 +62,7 @@ The value of \eqn{mean} should be chosen between the maximum and minimum values 
 Owen, A.B. (2001). \code{Empirical Likelihood}. Chapman and Hall/CRC, Boca Raton, pp.223-227.
 }
 \author{
-William H. Barton <bbarton@lexmark.com>
+William H. Barton <bbarton@lexmark.com> and modified by Mai Zhou.
 }
 \examples{ 
 u<-c(10, 209, 273, 279, 324, 391, 566, 785)

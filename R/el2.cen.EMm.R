@@ -18,10 +18,10 @@ el2.cen.EMm<-function(x, dx, wx=rep(1,length(x)), y, dy, wy=rep(1,length(y)), p,
         stop("length of y and dy must agree")
     if (length(xc) != nx) 
         stop("length of xc and dx must agree")
-    if (length(dy) != ny) 
+    if (length(yc) != ny) 
         stop("length of yc and dy must agree")
 #Check that there are enough data in x,y
-    if (nx <= length(mean)) 
+    if (nx <= 2*length(mean) + 1) 
         stop("need more observations than length of mean in x")
     if (ny <= 2*length(mean) + 1) 
         stop("need more observations than length of mean in y")
@@ -60,7 +60,7 @@ el2.cen.EMm<-function(x, dx, wx=rep(1,length(x)), y, dy, wy=rep(1,length(y)), p,
     x  <- x[ind]
     dx <- dx[ind]
     wx <- diff(c(0, csumwx[ind]))
-    H   <- as.matrix(H[niceorderx, ][ind,])
+    H  <- as.matrix(H[niceorderx, ][ind,])
     #Clean y data
     niceordery <- order(y, -dy)  
     y   <-  y[niceordery]
@@ -102,10 +102,10 @@ el2.cen.EMm<-function(x, dx, wx=rep(1,length(x)), y, dy, wy=rep(1,length(y)), p,
     wyd1 <- wy[dy == 1]
     yd2  <-  y[dy == 2]
     wyd2 <- wy[dy == 2]    
-#Check that there are at least 2 uncensored data for x,y 
-    if (length(xd1) <= 1) 
+#Check that there are at least 3 uncensored data for x,y. Changed 2021/6 MaiZ
+    if (length(xd1) <= 2) 
         stop("need more distinct uncensored x obs.")
-    if (length(yd1) <= 1) 
+    if (length(yd1) <= 2) 
         stop("need more distinct uncensored y obs.")
 #Store vector lengths 
     nx0 <- length(xd0)

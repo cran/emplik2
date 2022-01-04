@@ -16,8 +16,8 @@ censored. A p-value for \eqn{H_o} is also calculated, based on the assumption th
 is asymptotically distributed as chisq(p). 
 }
 \usage{
-el2.cen.EMm(x, dx, wx, y, dy, wy, p, H, xc=1:length(x), yc=1:length(y),
-  mean, maxit=15)
+el2.cen.EMm(x, dx, wx=rep(1,length(x)), y, dy, wy=rep(1,length(y)), 
+            p, H, xc=1:length(x), yc=1:length(y), mean, maxit=15)
 }
 \arguments{
 \item{x}{a vector of the data for the first sample}

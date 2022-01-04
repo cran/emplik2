@@ -1,0 +1,21 @@
+Dec. 31, 2021. Version 1.32
+
+1. Improved function el2.test.wtm() by eliminating two
+for-loops. It is now faster.
+For larger samples, more improvement in computing time.
+
+For example: for sample sizes (72, 41), [the aSAH data set]
+the computing time is better than 1/5 of the old version.
+(5.5 times faster).
+
+2. Also in the el2.test.wtm(), change b%*%solve(A) to solve(A, b)
+
+3. Modified el2.test.tws(). We added a new input: lamOld.
+This can be used to improve computation of root (lambda)
+in iterations.
+You do not have to always start from 0 to search for root,
+you may start from the previous solution.
+Although the default is lamOld=0.
+
+4. Some minor modification on the determination of interval
+  [lo, up] for the uniroot() to find root (lam).
