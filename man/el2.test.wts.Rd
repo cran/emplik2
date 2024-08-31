@@ -4,7 +4,7 @@
 Computes maximium-likelihood probability jumps for a single mean-type hypothesis, based on two independent uncensored samples}
 \description{
 This function computes the maximum-likelihood probability jumps for a single mean-type hypothesis, based on two samples
- that are independent, uncensored, and weighted.  The target function for the maximization is the constrained
+ that are independent, uncensored, and weighted.  The target function (Lagrangian) for the maximization is the constrained
 log(empirical likelihood) which can be expressed as,
 \deqn{\sum_{dx_i=1} wx_i \log{\mu_i} + \sum_{dy_j=1} wy_j \log{\nu_j} - \eta ( 1 - \sum_{dx_i=1} \mu_i ) - \delta
 ( 1 -\sum_{dy_j=1} \nu_j ) - \lambda \sum_{dx_i=1} \sum_{dy_j=1} ( g(x_i,y_j)- mean ) \mu_i \nu_j }

@@ -1,23 +1,26 @@
 \name{el2.cen.EMm}
 \alias{el2.cen.EMm}
 \title{
-Computes p-value for multiple mean-type hypotheses, based on two independent samples that may contain censored data.
+Computes empirical likelihood ratio and p-value for multiple mean-type hypotheses, 
+based on two independent samples that may contain censored data.
 }
 \description{
-This function uses the EM algorithm to calculate a maximized empirical likelihood ratio for a set of \eqn{p} hypotheses
+This function is similar to \code{el2.cen.EMs} but for several mean type restrictions.
+This function uses the EM algorithm to calculate a maximized empirical likelihood ratio for a set of \eqn{p} 
+simultaneous hypotheses
 as follows:
 \deqn{
 H_o:  E(g(x,y)-mean)=0 
 }
-where \eqn{E} indicates expected value; \eqn{g(x,y)} is a vector of user-defined functions \eqn{g_1(x,y), \ldots,
+where \eqn{E} indicates expected value; \eqn{g(x,y)} is a vector of user-defined functions: \eqn{g_1(x,y), \ldots,
 g_p(x,y)}; and \eqn{mean} is a vector of \eqn{p} hypothesized values of \eqn{E(g(x,y))}. The two samples \eqn{x} and \eqn{y}
 are assumed independent. They may be uncensored, right-censored, left-censored, or left-and-right (``doubly'') 
 censored. A p-value for \eqn{H_o} is also calculated, based on the assumption that -2*log(empirical likelihood ratio)
-is asymptotically distributed as chisq(p). 
+is asymptotically distributed as chisq(df=p). 
 }
 \usage{
 el2.cen.EMm(x, dx, wx=rep(1,length(x)), y, dy, wy=rep(1,length(y)), 
-            p, H, xc=1:length(x), yc=1:length(y), mean, maxit=15)
+            p, H, xc=1:length(x), yc=1:length(y), mean, maxit=35)
 }
 \arguments{
 \item{x}{a vector of the data for the first sample}
@@ -34,7 +37,7 @@ el2.cen.EMm(x, dx, wx=rep(1,length(x)), y, dy, wy=rep(1,length(y)),
 \item{xc}{a vector containing the indices of the \code{x} datapoints, controls if tied x collapse or not}
 \item{yc}{a vector containing the indices of the \code{y} datapoints, ditto}
 \item{mean}{the hypothesized value of \eqn{E(g(x,y)})}
-\item{maxit}{a positive integer used to control the maximum number of iterations of the EM algorithm; default is 15}
+\item{maxit}{a positive integer used to control the maximum number of iterations of the EM algorithm; default is 35}
 }
 \details{
 The value of \eqn{mean_k} should be chosen between the maximum and minimum values of \eqn{g_k(x_i,y_j)}; otherwise
@@ -95,7 +98,7 @@ Zhou, M. (2005). ``Empirical likelihood ratio with arbitrarily censored/truncate
 
 Zhou, M. (2009) \code{emplik} package on CRAN website. 
      The function \code{el2.cen.EMm} here extends \code{el.cen.EM2} 
-	 inside emplik from one-sample to two-samples.
+	 inside \code{emplik} package from one-sample to two-samples.
 }
 \author{
 William H. Barton <bbarton@lexmark.com>
@@ -123,10 +126,10 @@ for (i in 1:nx) {
    H2[i,j]<-(x[i]>1060) } }
 H=matrix(c(H1,H2),nrow=nx,ncol=p*ny)
 
-# Ho1: X is stochastically equal to Y
-# Ho2: mean of X equals mean of Y
+# Ho1: X is stochastically equal to Y (i.e. P(X>Y)=0.5)
+# Ho2: P(X>1060)=0.5 
 
-el2.cen.EMm(x=x, dx=dx, y=y, dy=dy, p=2, H=H, mean=mu, maxit=10)
+el2.cen.EMm(x=x, dx=dx, y=y, dy=dy, p=2, H=H, mean=mu)
 
 # Result: Pval is 0.6310234, so we cannot with 95 percent confidence reject the two
 # simultaneous hypotheses Ho1 and Ho2

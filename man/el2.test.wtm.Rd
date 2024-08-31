@@ -6,7 +6,8 @@ uncensored samples
 }
 \description{
 This function computes the maximum-likelihood probability jumps for multiple mean-type hypotheses, based on two samples
- that are independent, uncensored, and weighted.  The target function for the maximization is the constrained
+ that are independent, uncensored, and weighted.  The target function for the maximization is the (Lagrangian)
+ constrained
 log(empirical likelihood) which can be expressed as,
 \deqn{
 \sum_{dx_i=1} wx_i \log{\mu_i} + \sum_{dy_j=1} wy_j \log{\nu_j} - \eta ( 1 -\sum_{dx_i=1} \mu_i )
@@ -35,7 +36,7 @@ hypothesized value of \eqn{E(g_k(x,y))}
 \eqn{E} indicates ``expected value''
 }
 \usage{
-el2.test.wtm(xd1,yd1,wxd1new, wyd1new, muvec, nuvec, Hu, Hmu, Hnu, p, mean, maxit=15)  
+el2.test.wtm(xd1,yd1,wxd1new, wyd1new, muvec, nuvec, Hu, Hmu, Hnu, p, mean, maxit=35)  
 }
 \arguments{
 \item{xd1}{a vector of uncensored data for the first sample}
@@ -50,7 +51,7 @@ el2.test.wtm(xd1,yd1,wxd1new, wyd1new, muvec, nuvec, Hu, Hmu, Hnu, p, mean, maxi
 \item{p}{the number of hypotheses}
 \item{mean}{a vector of hypothesized values of \eqn{E(g_k(u,v)), k=1, \ldots,p}}
 \item{maxit}{a positive integer used to control the maximum number of iterations in the Newton-Raphson
- algorithm; default is 10}
+ algorithm; default is 35}
 }
 \details{
 This function is called by \code{el2.cen.EMm}.  It is listed here because the user may find it useful elsewhere.

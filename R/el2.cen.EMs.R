@@ -1,7 +1,6 @@
-el2.cen.EMs<-function(x,dx,y,dy,fun=function(x,y) {x>=y}, mean=0.5,
-  maxit=25){
+el2.cen.EMs<-function(x,dx,y,dy,fun=function(x,y){x>=y},mean=0.5,tol.u=1e-6,tol.v=1e-6,maxit=50){
 
-#x,y pairs can be any combination of uncensored, left-cens, right-cens
+#x, and y vectors can be any combination of uncensored, left-cens, right-cens
 #Data can be discrete or continuous
 #Note that x>y is not the same as x>=y for discrete data
 
@@ -220,9 +219,11 @@ el2.cen.EMs<-function(x,dx,y,dy,fun=function(x,y) {x>=y}, mean=0.5,
       }
   #Initialize iteration counter num and log-likelihood-holder logvec
      num <- 1
-     logvec <- rep(0,maxit)
+     logvec <- rep(0, maxit)
+	 error.mu <- 1
+	 error.nu <- 1
   #Repeat EM repeatedly for maxit iterations
-       while (num <= maxit) {
+       while ( (num <= maxit) & ((error.mu > tol.u)|(error.nu > tol.v)) ) {
   #Initialize weights wxd1new,wyd1new
         wxd1new <- wxd1
         wyd1new <- wyd1
@@ -248,10 +249,16 @@ el2.cen.EMs<-function(x,dx,y,dy,fun=function(x,y) {x>=y}, mean=0.5,
             wyd2[j] * nuvec[1:kky[j]]/cdfy[kky[j]] }
            }           
   #Perform Maximization step on uncensored x,y jumps
-        temp3 <- el2.test.wts(xd1, yd1, wxd1new, wyd1new, muvec,
-          nuvec, indicmat, mean)
+        temp3 <- el2.test.wts(xd1, yd1, wxd1new, wyd1new, muvec, nuvec, indicmat, mean)
         muvec <- temp3$jumpu
-        nuvec <- temp3$jumpv        
+        nuvec <- temp3$jumpv
+        if(num == 1) {muvecOLD <- rep( 1/length(muvec), length(muvec) )
+                      nuvecOLD <- rep( 1/length(nuvec), length(nuvec) )
+                     }					  
+		error.mu <- sum( abs(muvec - muvecOLD) )   
+		error.nu <- sum( abs(nuvec - nuvecOLD) )   
+		muvecOLD <- muvec 
+		nuvecOLD <- nuvec
    #Calculate loglikelihood so its convergence can be tracked
         logelx <- sum(wxd1 * log(muvec))
          if (nx0>0) {

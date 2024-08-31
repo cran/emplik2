@@ -10,7 +10,7 @@ These are internal functions called by \code{el2.test.wts} and \code{el2.test.wt
  to be called by the user.
 }
 \usage{
-myWCY(x, d, zc = rep(1, length(d)), wt = rep(1, length(d)), maxit = 25, error = 1e-09)
+myWCY(x, d, zc = rep(1, length(d)), wt = rep(1, length(d)), maxit = 35, error = 1e-09)
 myWKM(x, d, zc = rep(1, length(d)), w = rep(1, length(d)))
 myWdataclean2(z, d, wt = rep(1, length(z)))
 myWdataclean3(z, d, zc = rep(1, length(z)), wt = rep(1, length(z)))

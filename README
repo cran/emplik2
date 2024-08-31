@@ -5,7 +5,7 @@ for-loops. It is now faster.
 For larger samples, more improvement in computing time.
 
 For example: for sample sizes (72, 41), [the aSAH data set]
-the computing time is better than 1/5 of the old version.
+the computing time is less than 1/5 of the old version.
 (5.5 times faster).
 
 2. Also in the el2.test.wtm(), change b%*%solve(A) to solve(A, b)
@@ -19,3 +19,19 @@ Although the default is lamOld=0.
 
 4. Some minor modification on the determination of interval
   [lo, up] for the uniroot() to find root (lam).
+
+
+Aug. 31, 2024 Version 1.33
+
+Due to faster computers now, increase the default maxit value:
+
+1. Increase the DEFAULT maxit=25 to maxit=50 inside the function el2.cen.EMs()
+
+2. Increase the DEFAULT maxit=15 to maxit=35 inside the function el2.cen.EMm()
+
+3. Increase the DEFAULT maxit inside the function el2.test.wtm to 35.
+
+4. Add tol.u and tol.v to function  el2.cen.EMs()
+    which is the L1 norm of probability vector change after each iteration. 
+    Default to tol.u=tol.v=1e-6.
+

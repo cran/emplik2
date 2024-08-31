@@ -1,5 +1,5 @@
 myWCY <- function (x, d, zc = rep(1, length(d)), wt = rep(1, length(d)), 
-    maxit = 25, error = 1e-09) 
+    maxit = 35, error = 1e-09) 
 {
     xvec <- as.vector(x)
     nn <- length(xvec)
